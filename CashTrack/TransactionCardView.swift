@@ -13,8 +13,8 @@ struct TransactionCardView: View {
     var body: some View {
         HStack(spacing: 12){
             
+            //If expense image will be down arrow, and if income will be up arrow
             if (expense.type == .income) {
-                // MARK: First Letter Avatar
                 Image(systemName: "arrow.up")
                     .font(.title.bold())
                     .foregroundColor(.white)
@@ -44,7 +44,6 @@ struct TransactionCardView: View {
                 .frame(maxWidth: .infinity,alignment: .leading)
             
             VStack(alignment: .trailing, spacing: 7) {
-                // MARK: Displaying Price
                 let price = expenseViewModel.convertNumberToPrice(value: expense.type == .expense ? -expense.amount : expense.amount)
                 Text(price)
                     .font(.callout)

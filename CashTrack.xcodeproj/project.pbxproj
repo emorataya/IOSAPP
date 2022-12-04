@@ -18,7 +18,6 @@
 		D3BA5AD4293A99E400E8A955 /* CashTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA5AD3293A99E400E8A955 /* CashTrackTests.swift */; };
 		D3BA5ADE293A99E400E8A955 /* CashTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA5ADD293A99E400E8A955 /* CashTrackUITests.swift */; };
 		D3BA5AE0293A99E400E8A955 /* CashTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA5ADF293A99E400E8A955 /* CashTrackUITestsLaunchTests.swift */; };
-		D3BA5AED293A9AEA00E8A955 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA5AEC293A9AEA00E8A955 /* Extensions.swift */; };
 		D3BA5AEF293AA18C00E8A955 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA5AEE293AA18C00E8A955 /* ExpenseViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		D3BA5AD9293A99E400E8A955 /* CashTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BA5ADD293A99E400E8A955 /* CashTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashTrackUITests.swift; sourceTree = "<group>"; };
 		D3BA5ADF293A99E400E8A955 /* CashTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D3BA5AEC293A9AEA00E8A955 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D3BA5AEE293AA18C00E8A955 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +109,6 @@
 				D3B3B268293D45EC00D5168E /* NavBar.swift */,
 				D3636A9C293AE65C003F6422 /* NewExpense.swift */,
 				D3636AA2293AEAD0003F6422 /* TransactionCardView.swift */,
-				D3BA5AEC293A9AEA00E8A955 /* Extensions.swift */,
 				D3636A9E293AE6A3003F6422 /* Expense.swift */,
 				D3BA5AC6293A99E300E8A955 /* Assets.xcassets */,
 				D3BA5AC8293A99E300E8A955 /* Preview Content */,
@@ -280,7 +277,6 @@
 				D3636AA3293AEAD0003F6422 /* TransactionCardView.swift in Sources */,
 				D3BA5AC5293A99E000E8A955 /* MainPageView.swift in Sources */,
 				D3BA5AEF293AA18C00E8A955 /* ExpenseViewModel.swift in Sources */,
-				D3BA5AED293A9AEA00E8A955 /* Extensions.swift in Sources */,
 				D3636A9D293AE65C003F6422 /* NewExpense.swift in Sources */,
 				D3BA5AC3293A99E000E8A955 /* CashTrackApp.swift in Sources */,
 			);

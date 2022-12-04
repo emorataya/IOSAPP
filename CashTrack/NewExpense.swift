@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct NewExpense: View {
-    
+    @Binding var tabSelection: Int
     @EnvironmentObject var expenseViewModel: ExpenseViewModel
-    // MARK: Environment Values
     @Environment(\.self) var env
     var body: some View {
         VStack{
@@ -20,8 +19,6 @@ struct NewExpense: View {
                     .fontWeight(.semibold)
                     .opacity(0.5)
                 
-                // MARK: Custom TextField
-                // For Currency Symbol
                 if let symbol = expenseViewModel.convertNumberToPrice(value: 0).first{
                     TextField("0", text: $expenseViewModel.amount)
                         .font(.system(size: 35))
@@ -48,14 +45,13 @@ struct NewExpense: View {
                         .padding(.top)
                 }
                 
-                // MARK: Custom Labels
                 Label {
                     TextField("Remark",text: $expenseViewModel.remark)
                         .padding(.leading,10)
                 } icon: {
                     Image(systemName: "list.bullet.rectangle.portrait.fill")
                         .font(.title3)
-                        .foregroundColor(Color("Gray"))
+                        .foregroundColor(.gray)
                 }
                 .padding(.vertical,20)
                 .padding(.horizontal,15)
@@ -66,12 +62,10 @@ struct NewExpense: View {
                 .padding(.top,25)
                 
                 Label {
-                    // MARK: CheckBoxes
                     CustomCheckboxes()
                 } icon: {
                     Image(systemName: "arrow.up.arrow.down")
-                        .font(.title3)
-                        .foregroundColor(Color("Gray"))
+                        .foregroundColor(.gray)
                 }
                 .padding(.vertical,20)
                 .padding(.horizontal,15)
@@ -90,7 +84,7 @@ struct NewExpense: View {
                 } icon: {
                     Image(systemName: "calendar")
                         .font(.title3)
-                        .foregroundColor(Color("Gray"))
+                        .foregroundColor(.gray)
                 }
                 .padding(.vertical,20)
                 .padding(.horizontal,15)
@@ -102,8 +96,9 @@ struct NewExpense: View {
             }
             .frame(maxHeight: .infinity,alignment: .center)
             
-            // MARK: Save Button
-            Button(action: {expenseViewModel.saveData(env: env)}) {
+            Button(action: {expenseViewModel.saveData(env: env)
+                self.tabSelection = 1
+            }) {
                 Text("Save")
                     .font(.title3)
                     .fontWeight(.semibold)
@@ -125,21 +120,8 @@ struct NewExpense: View {
             Color.gray
                 .ignoresSafeArea()
         }
-        .overlay(alignment: .topTrailing) {
-            // MARK: Close Button
-            Button {
-                env.dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.title2)
-                    .foregroundColor(.black)
-                    .opacity(0.7)
-            }
-            .padding()
-        }
     }
     
-    // MARK: Checkboxes
     @ViewBuilder
     func CustomCheckboxes()->some View{
         HStack(spacing: 10){
@@ -170,11 +152,5 @@ struct NewExpense: View {
         }
         .frame(maxWidth: .infinity,alignment: .leading)
         .padding(.leading,10)
-    }
-}
-
-struct NewExpense_Previews: PreviewProvider {
-    static var previews: some View {
-        NewExpense()
     }
 }

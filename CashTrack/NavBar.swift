@@ -9,27 +9,22 @@ import SwiftUI
 
 struct NavBar: View {
     @StateObject var expenseViewModel: ExpenseViewModel = .init()
+    @State private var tabSelection = 1
     var body: some View {
         TabView {
             MainPageView().environmentObject(expenseViewModel)
                 .tabItem(){
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    
                     Text("Home")
-                }
-            NewExpense().environmentObject(expenseViewModel)
-                .fullScreenCover(isPresented: $expenseViewModel.addNewExpense)
-                    {
-                        expenseViewModel.clearData()
-                    } content: {
-                        NewExpense().environmentObject(expenseViewModel)
-                    }
+                }.tag(1)
+            NewExpense(tabSelection: $tabSelection).environmentObject(expenseViewModel)
                 .tabItem() {
                     Text("Add")
                         .onTapGesture{
-                            print("Executed")
                             expenseViewModel.addNewExpense.toggle()
                         }
-                }
+                }.tag(2)
         }.onAppear() {
             let tabBarAppearance = UITabBarAppearance()
             tabBarAppearance.configureWithOpaqueBackground()

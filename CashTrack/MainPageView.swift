@@ -37,20 +37,12 @@ struct MainPageView: View {
                 .background{
                     Circle()
                         .fill(.black)
-//                        .fill(
-//                            .linearGradient(colors: [
-//                                Color("blue"),
-//                                Color("red"),
-//                                Color("yellow"),
-//                            ], startPoint: .topLeading, endPoint: .bottomTrailing)
-//                        )
                 }
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
         }
         .padding()
     }
     
-    // MARK: Transactions View
     @ViewBuilder
     func TransactionsView()->some View{
         VStack(spacing: 15){
@@ -61,7 +53,6 @@ struct MainPageView: View {
                 .padding(.bottom)
             
             ForEach(expenseViewModel.expenses){expense in
-                // MARK: Transaction Card View
                 TransactionCardView(expense: expense)
                     .environmentObject(expenseViewModel)
             }
@@ -85,8 +76,6 @@ extension MainPageView {
                 
                 VStack(spacing: 15){
                     VStack(spacing: 15){
-                        
-                        // MARK: Current Month Expenses Price
                         Text(expenseViewModel.convertExpensesToCurrency(expenses: expenseViewModel.expenses))
                             .font(.system(size: 35, weight: .bold))
                             .lineLimit(1)

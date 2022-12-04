@@ -9,7 +9,6 @@ import Foundation
 
 import SwiftUI
 
-// MARK: Expense Model And Sample Data
 struct Expense: Identifiable,Hashable{
     var id = UUID().uuidString
     var remark: String
