@@ -10,6 +10,7 @@
 		D3636A9D293AE65C003F6422 /* NewExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3636A9C293AE65C003F6422 /* NewExpense.swift */; };
 		D3636A9F293AE6A3003F6422 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3636A9E293AE6A3003F6422 /* Expense.swift */; };
 		D3636AA3293AEAD0003F6422 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3636AA2293AEAD0003F6422 /* TransactionCardView.swift */; };
+		D3B3B269293D45EC00D5168E /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3B268293D45EC00D5168E /* NavBar.swift */; };
 		D3BA5AC3293A99E000E8A955 /* CashTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA5AC2293A99E000E8A955 /* CashTrackApp.swift */; };
 		D3BA5AC5293A99E000E8A955 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BA5AC4293A99E000E8A955 /* MainPageView.swift */; };
 		D3BA5AC7293A99E300E8A955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BA5AC6293A99E300E8A955 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		D3636A9C293AE65C003F6422 /* NewExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpense.swift; sourceTree = "<group>"; };
 		D3636A9E293AE6A3003F6422 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		D3636AA2293AEAD0003F6422 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
+		D3B3B268293D45EC00D5168E /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		D3BA5ABF293A99E000E8A955 /* CashTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BA5AC2293A99E000E8A955 /* CashTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashTrackApp.swift; sourceTree = "<group>"; };
 		D3BA5AC4293A99E000E8A955 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				D3BA5AC2293A99E000E8A955 /* CashTrackApp.swift */,
 				D3BA5AC4293A99E000E8A955 /* MainPageView.swift */,
+				D3B3B268293D45EC00D5168E /* NavBar.swift */,
 				D3636A9C293AE65C003F6422 /* NewExpense.swift */,
 				D3636AA2293AEAD0003F6422 /* TransactionCardView.swift */,
 				D3BA5AEC293A9AEA00E8A955 /* Extensions.swift */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3636A9F293AE6A3003F6422 /* Expense.swift in Sources */,
+				D3B3B269293D45EC00D5168E /* NavBar.swift in Sources */,
 				D3636AA3293AEAD0003F6422 /* TransactionCardView.swift in Sources */,
 				D3BA5AC5293A99E000E8A955 /* MainPageView.swift in Sources */,
 				D3BA5AEF293AA18C00E8A955 /* ExpenseViewModel.swift in Sources */,

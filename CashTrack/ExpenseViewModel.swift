@@ -83,6 +83,7 @@ class ExpenseViewModel: ObservableObject{
         let colors = ["Yellow","Red","Purple","Green"]
         let expense = Expense(remark: remark, amount: amountInDouble, date: date, type: type, color: colors.randomElement() ?? "Yellow")
         withAnimation{expenses.append(expense)}
+        clearData()
         expenses = expenses.sorted(by: { first, scnd in
             return scnd.date < first.date
         })

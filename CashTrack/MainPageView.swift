@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainPageView: View {
-    @StateObject var expenseViewModel: ExpenseViewModel = .init()
+    @EnvironmentObject var expenseViewModel: ExpenseViewModel
     var isFilter: Bool = false
     
     var body: some View {
@@ -22,15 +22,6 @@ struct MainPageView: View {
         .background{
             Color("Black")
                 .ignoresSafeArea()
-        }
-        .fullScreenCover(isPresented: $expenseViewModel.addNewExpense) {
-            expenseViewModel.clearData()
-        } content: {
-            NewExpense()
-                .environmentObject(expenseViewModel)
-        }
-        .overlay(alignment: .bottomTrailing) {
-            AddButton()
         }
     }
     

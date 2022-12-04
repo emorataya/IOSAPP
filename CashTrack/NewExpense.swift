@@ -111,13 +111,7 @@ struct NewExpense: View {
                     .frame(maxWidth: .infinity)
                     .background{
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(.black
-//                                LinearGradient(colors: [
-//                                    Color("Gradient1"),
-//                                    Color("Gradient2"),
-//                                    Color("Gradient3"),
-//                                ], startPoint: .topLeading, endPoint: .bottomTrailing)
-                            )
+                            .fill(.black)
                     }
                     .foregroundColor(.white)
                     .padding(.bottom,10)
@@ -128,7 +122,7 @@ struct NewExpense: View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background{
-            Color("BG")
+            Color.gray
                 .ignoresSafeArea()
         }
         .overlay(alignment: .topTrailing) {
