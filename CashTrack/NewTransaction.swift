@@ -1,32 +1,32 @@
 //
-//  NewExpense.swift
+//  NewTransaction.swift
 //  CashTrack
 //
-//  Created by Edwin Morataya on 12/2/22.
+//  Created by Edwin Morataya on 11/13/22.
 //
 
 import SwiftUI
 
-struct NewExpense: View {
+struct NewTransaction: View {
     @Binding var tabSelection: Int
-    @EnvironmentObject var expenseViewModel: ExpenseViewModel
+    @EnvironmentObject var transactionViewModel: TransactionViewModel
     @Environment(\.self) var env
     var body: some View {
         VStack{
             VStack(spacing: 15){
-                Text("Add Expenses")
+                Text("Add transaction")
                     .font(.title2)
                     .fontWeight(.semibold)
                     .opacity(0.5)
                 
-                if let symbol = expenseViewModel.convertNumberToPrice(value: 0).first{
-                    TextField("0", text: $expenseViewModel.amount)
+                if let symbol = transactionViewModel.convertNumberToPrice(value: 0).first{
+                    TextField("0", text: $transactionViewModel.amount)
                         .font(.system(size: 35))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
                         .keyboardType(.numberPad)
                         .background{
-                            Text(expenseViewModel.amount == "" ? "0" : expenseViewModel.amount)
+                            Text(transactionViewModel.amount == "" ? "0" : transactionViewModel.amount)
                                 .font(.system(size: 35))
                                 .opacity(0)
                                 .overlay(alignment: .leading) {
@@ -46,7 +46,7 @@ struct NewExpense: View {
                 }
                 
                 Label {
-                    TextField("Remark",text: $expenseViewModel.remark)
+                    TextField("Description",text: $transactionViewModel.remark)
                         .padding(.leading,10)
                 } icon: {
                     Image(systemName: "list.bullet.rectangle.portrait.fill")
@@ -76,7 +76,7 @@ struct NewExpense: View {
                 .padding(.top,5)
                 
                 Label {
-                    DatePicker.init("", selection: $expenseViewModel.date,in: Date.distantPast...Date(),displayedComponents: [.date])
+                    DatePicker.init("", selection: $transactionViewModel.date,in: Date.distantPast...Date(),displayedComponents: [.date])
                         .datePickerStyle(.compact)
                         .labelsHidden()
                         .frame(maxWidth: .infinity,alignment: .leading)
@@ -96,7 +96,7 @@ struct NewExpense: View {
             }
             .frame(maxHeight: .infinity,alignment: .center)
             
-            Button(action: {expenseViewModel.saveData(env: env)
+            Button(action: {transactionViewModel.saveData(env: env)
                 self.tabSelection = 1
             }) {
                 Text("Save")
@@ -111,8 +111,8 @@ struct NewExpense: View {
                     .foregroundColor(.white)
                     .padding(.bottom,10)
             }
-            .disabled(expenseViewModel.remark == "" || expenseViewModel.type == .all || expenseViewModel.amount == "")
-            .opacity(expenseViewModel.remark == "" || expenseViewModel.type == .all || expenseViewModel.amount == "" ? 0.6 : 1)
+            .disabled(transactionViewModel.remark == "" || transactionViewModel.type == .all || transactionViewModel.amount == "")
+            .opacity(transactionViewModel.remark == "" || transactionViewModel.type == .all || transactionViewModel.amount == "" ? 0.6 : 1)
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -132,7 +132,7 @@ struct NewExpense: View {
                         .opacity(0.5)
                         .frame(width: 20, height: 20)
                     
-                    if expenseViewModel.type == type{
+                    if transactionViewModel.type == type{
                         Image(systemName: "checkmark")
                             .font(.caption.bold())
                             .foregroundColor(.green)
@@ -140,7 +140,7 @@ struct NewExpense: View {
                 }
                 .contentShape(Rectangle())
                 .onTapGesture {
-                    expenseViewModel.type = type
+                    transactionViewModel.type = type
                 }
                 
                 Text(type.rawValue.capitalized)

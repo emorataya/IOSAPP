@@ -2,7 +2,7 @@
 //  CashTrackApp.swift
 //  CashTrack
 //
-//  Created by Edwin Morataya on 12/2/22.
+//  Created by Edwin Morataya on 11/13/22.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct CashTrackApp: App {
     var body: some Scene {
         WindowGroup {
-            NavBar()
+            ContentView()
         }
     }
 }

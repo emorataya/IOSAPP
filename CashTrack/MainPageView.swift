@@ -1,46 +1,28 @@
 //
-//  ContentView.swift
+//  MainPageView.swift
 //  CashTrack
 //
-//  Created by Edwin Morataya on 12/2/22.
+//  Created by Edwin Morataya on 11/13/22.
 //
 
 import SwiftUI
 
 struct MainPageView: View {
-    @EnvironmentObject var expenseViewModel: ExpenseViewModel
+    @EnvironmentObject var transactionViewModel: TransactionViewModel
     var isFilter: Bool = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 14){
-                ExpenseCard
-                    .environmentObject(expenseViewModel)
+                TransactionCard
+                    .environmentObject(transactionViewModel)
                 TransactionsView()
             }
         }
         .background{
-            Color("Black")
+            Color(.gray)
                 .ignoresSafeArea()
         }
-    }
-    
-    @ViewBuilder
-    func AddButton()->some View{
-        Button {
-            expenseViewModel.addNewExpense.toggle()
-        } label: {
-            Image(systemName: "plus")
-                .font(.system(size: 25, weight: .medium))
-                .foregroundColor(.white)
-                .frame(width: 55, height: 55)
-                .background{
-                    Circle()
-                        .fill(.black)
-                }
-                .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
-        }
-        .padding()
     }
     
     @ViewBuilder
@@ -49,40 +31,30 @@ struct MainPageView: View {
             Text("Transactions")
                 .font(.title2.bold())
                 .opacity(0.7)
-                .frame(maxWidth: .infinity,alignment: .leading)
+                .frame(maxWidth: .infinity,alignment: .center)
                 .padding(.bottom)
             
-            ForEach(expenseViewModel.expenses){expense in
+            ForEach(transactionViewModel.expenses){expense in
                 TransactionCardView(expense: expense)
-                    .environmentObject(expenseViewModel)
+                    .environmentObject(transactionViewModel)
             }
         }
         .padding(.top)
     }
 }
-struct MainPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainPageView()
-    }
-}
 
 extension MainPageView {
-
-    var ExpenseCard: some View {
-        
-            GeometryReader{proxy in
+    var TransactionCard: some View {
+            GeometryReader{transaction in
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .background(Color.white)
-                
-                VStack(spacing: 15){
+                    .background(Color.gray)
                     VStack(spacing: 15){
-                        Text(expenseViewModel.convertExpensesToCurrency(expenses: expenseViewModel.expenses))
+                        Text(transactionViewModel.convertExpensesToCurrency(expenses: transactionViewModel.expenses))
                             .font(.system(size: 35, weight: .bold))
                             .lineLimit(1)
                             .padding(.bottom,5)
                     }
                     .offset(y: 0)
-                }
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }

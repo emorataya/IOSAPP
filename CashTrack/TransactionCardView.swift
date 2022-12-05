@@ -2,14 +2,14 @@
 //  TransactionCardView.swift
 //  CashTrack
 //
-//  Created by Edwin Morataya on 12/2/22.
+//  Created by Edwin Morataya on 11/13/22.
 //
 
 import SwiftUI
 
 struct TransactionCardView: View {
-    var expense: Expense
-    @EnvironmentObject var expenseViewModel: ExpenseViewModel
+    var expense: Transaction
+    @EnvironmentObject var transactionViewModel: TransactionViewModel
     var body: some View {
         HStack(spacing: 12){
             
@@ -38,13 +38,13 @@ struct TransactionCardView: View {
             }
 
             
-            Text(expense.remark)
+            Text(expense.description)
                 .fontWeight(.semibold)
                 .lineLimit(1)
                 .frame(maxWidth: .infinity,alignment: .leading)
             
             VStack(alignment: .trailing, spacing: 7) {
-                let price = expenseViewModel.convertNumberToPrice(value: expense.type == .expense ? -expense.amount : expense.amount)
+                let price = transactionViewModel.convertNumberToPrice(value: expense.type == .expense ? -expense.amount : expense.amount)
                 Text(price)
                     .font(.callout)
                     .opacity(0.7)
@@ -57,7 +57,8 @@ struct TransactionCardView: View {
         .padding()
         .background{
             RoundedRectangle(cornerRadius: 15, style: .continuous)
-                .fill(.white)
+                .fill(.black)
         }
+        .foregroundColor(.white)
     }
 }

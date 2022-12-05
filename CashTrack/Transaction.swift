@@ -1,21 +1,20 @@
 //
-//  Expense.swift
+//  Transaction.swift
 //  CashTrack
 //
-//  Created by Edwin Morataya on 12/2/22.
+//  Created by Edwin Morataya on 11/13/22.
 //
 
 import Foundation
 
 import SwiftUI
 
-struct Expense: Identifiable,Hashable{
+struct Transaction: Identifiable,Hashable{
     var id = UUID().uuidString
-    var remark: String
+    var description: String
     var amount: Double
     var date: Date
     var type: ExpenseType
-    var color: String
 }
 
 enum ExpenseType: String{
@@ -24,7 +23,7 @@ enum ExpenseType: String{
     case all = "ALL"
 }
 
-var sample_expenses: [Expense] = [
+var sample_expenses: [Transaction] = [
 //    Expense(remark: "Stocks", amount: 2599, date: Date(timeIntervalSince1970: 1652036845), type: .income, color: "Purple"),
 //    Expense(remark: "In App Purchase", amount: 499, date: Date(timeIntervalSince1970: 1651864045), type: .income, color: "Red"),
 //    Expense(remark: "Movie Ticket", amount: 99, date: Date(timeIntervalSince1970: 1651691245), type: .expense, color: "Yellow"),

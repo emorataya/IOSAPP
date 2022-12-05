@@ -8,22 +8,17 @@
 import SwiftUI
 
 struct NavBar: View {
-    @StateObject var expenseViewModel: ExpenseViewModel = .init()
+    @StateObject var transactionViewModel: TransactionViewModel = .init()
     @State private var tabSelection = 1
     var body: some View {
         TabView {
-            MainPageView().environmentObject(expenseViewModel)
+            MainPageView().environmentObject(transactionViewModel)
                 .tabItem(){
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    
                     Text("Home")
                 }.tag(1)
-            NewExpense(tabSelection: $tabSelection).environmentObject(expenseViewModel)
+            NewTransaction(tabSelection: $tabSelection).environmentObject(transactionViewModel)
                 .tabItem() {
-                    Text("Add")
-                        .onTapGesture{
-                            expenseViewModel.addNewExpense.toggle()
-                        }
+                    Text("Add") 
                 }.tag(2)
         }.onAppear() {
             let tabBarAppearance = UITabBarAppearance()
