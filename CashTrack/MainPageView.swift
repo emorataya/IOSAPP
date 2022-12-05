@@ -20,7 +20,7 @@ struct MainPageView: View {
             }
         }
         .background{
-            Color(.gray)
+            Color("DarkGray")
                 .ignoresSafeArea()
         }
     }
@@ -30,9 +30,11 @@ struct MainPageView: View {
         VStack(spacing: 15){
             Text("Transactions")
                 .font(.title2.bold())
-                .opacity(0.7)
+                //.opacity(0.7)
                 .frame(maxWidth: .infinity,alignment: .center)
                 .padding(.bottom)
+                .foregroundColor(.white)
+
             
             ForEach(transactionViewModel.expenses){expense in
                 TransactionCardView(expense: expense)
@@ -47,10 +49,10 @@ extension MainPageView {
     var TransactionCard: some View {
             GeometryReader{transaction in
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .background(Color.gray)
+                    .background(Color("DarkGray"))
                     VStack(spacing: 15){
                         Text(transactionViewModel.convertExpensesToCurrency(expenses: transactionViewModel.expenses))
-                            .font(.system(size: 35, weight: .bold))
+                            .font(.system(size: 40, weight: .bold))
                             .lineLimit(1)
                             .padding(.bottom,5)
                     }

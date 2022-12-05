@@ -21,7 +21,7 @@ struct TransactionCardView: View {
                     .frame(width: 50, height: 50)
                     .background{
                         Circle()
-                            .fill(expense.type == .expense ? Color.red : Color.green)
+                            .fill(expense.type == .expense ? Color.red : Color("Green"))
                     }
                     .shadow(color: .black.opacity(0.08), radius: 5, x: 5, y: 5)
             }
@@ -32,32 +32,33 @@ struct TransactionCardView: View {
                     .frame(width: 50, height: 50)
                     .background{
                         Circle()
-                            .fill(expense.type == .expense ? Color.red : Color.green)
+                            .fill(expense.type == .expense ? Color.red : Color("Green"))
                     }
                     .shadow(color: .black.opacity(0.08), radius: 5, x: 5, y: 5)
             }
 
-            
             Text(expense.description)
                 .fontWeight(.semibold)
                 .lineLimit(1)
                 .frame(maxWidth: .infinity,alignment: .leading)
-            
+                .foregroundColor(.white)
+
             VStack(alignment: .trailing, spacing: 7) {
                 let price = transactionViewModel.convertNumberToPrice(value: expense.type == .expense ? -expense.amount : expense.amount)
                 Text(price)
                     .font(.callout)
-                    .opacity(0.7)
-                    .foregroundColor(expense.type == .expense ? Color.red : Color.green)
+                    //.opacity(0.7)
+                    .foregroundColor(expense.type == .expense ? Color.red : Color("Green"))
                 Text(expense.date.formatted(date: .numeric, time: .omitted))
                     .font(.caption)
-                    .opacity(0.5)
+                    //.opacity(0.5)
+                    .foregroundColor(.white)
             }
         }
         .padding()
         .background{
             RoundedRectangle(cornerRadius: 15, style: .continuous)
-                .fill(.black)
+                .fill(Color("Gray"))
         }
         .foregroundColor(.white)
     }

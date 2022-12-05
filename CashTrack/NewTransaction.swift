@@ -17,7 +17,7 @@ struct NewTransaction: View {
                 Text("Add transaction")
                     .font(.title2)
                     .fontWeight(.semibold)
-                    .opacity(0.5)
+                    .foregroundColor(.white)
                 
                 if let symbol = transactionViewModel.convertNumberToPrice(value: 0).first{
                     TextField("0", text: $transactionViewModel.amount)
@@ -39,7 +39,7 @@ struct NewTransaction: View {
                         .frame(maxWidth: .infinity)
                         .background{
                             Capsule()
-                                .fill(.gray)
+                                .fill(.white)
                         }
                         .padding(.horizontal,20)
                         .padding(.top)
@@ -106,7 +106,7 @@ struct NewTransaction: View {
                     .frame(maxWidth: .infinity)
                     .background{
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(.black)
+                            .fill(Color("Green"))
                     }
                     .foregroundColor(.white)
                     .padding(.bottom,10)
@@ -117,7 +117,7 @@ struct NewTransaction: View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background{
-            Color.gray
+            Color("DarkGray")
                 .ignoresSafeArea()
         }
     }
@@ -135,7 +135,7 @@ struct NewTransaction: View {
                     if transactionViewModel.type == type{
                         Image(systemName: "checkmark")
                             .font(.caption.bold())
-                            .foregroundColor(.green)
+                            .foregroundColor(Color("Green"))
                     }
                 }
                 .contentShape(Rectangle())

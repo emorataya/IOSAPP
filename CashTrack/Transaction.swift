@@ -24,9 +24,7 @@ enum ExpenseType: String{
 }
 
 var sample_expenses: [Transaction] = [
-//    Expense(remark: "Stocks", amount: 2599, date: Date(timeIntervalSince1970: 1652036845), type: .income, color: "Purple"),
-//    Expense(remark: "In App Purchase", amount: 499, date: Date(timeIntervalSince1970: 1651864045), type: .income, color: "Red"),
-//    Expense(remark: "Movie Ticket", amount: 99, date: Date(timeIntervalSince1970: 1651691245), type: .expense, color: "Yellow"),
-//    Expense(remark: "Apple Music", amount: 25, date: Date(timeIntervalSince1970: 1651518445), type: .expense, color: "Green"),
-//    Expense(remark: "Snacks", amount: 49, date: Date(timeIntervalSince1970: 1651432045), type: .expense, color: "Purple"),
+    Transaction(description: "Stocks", amount: 2599, date: Date(timeIntervalSince1970: 1652036845), type: .income),
+    Transaction(description: "In App Purchase", amount: 499, date: Date(timeIntervalSince1970: 1651864045), type: .income),
+    Transaction(description: "Movie Ticket", amount: 99, date: Date(timeIntervalSince1970: 1651691245), type: .expense)
 ]
