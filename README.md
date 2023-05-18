@@ -1,4 +1,6 @@
 # IOSAPP
+The Budget Tracker App is a user-friendly and efficient financial management tool. It allows users to keep track of their income, expenses, and savings in real-time, promoting smarter financial decisions. With an intuitive interface, the app categorizes spending, sets budget limits, and offers visual representations of spending habits, facilitating a comprehensive understanding of one's personal finances.
+
 WORK PERCENTAGE PERFORMED:
 //  Edwin Morataya: 50%
 //  Andres Gomez: 50%
